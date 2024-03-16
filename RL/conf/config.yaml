@@ -1,0 +1,37 @@
+defaults:  
+  - base_config
+  - algo: sac
+  - replay: trans
+  - env: envpool
+  - _self_  
+  - override hydra/hydra_logging: disabled  
+  - override hydra/job_logging: disabled  
+  
+  
+hydra:  
+  output_subdir: null  
+  run:  
+    dir: .
+
+train:
+  batch_size: 256
+  steps_per_epoch: 10000
+  steps: 1_000_000
+  replay_ratio: 1
+  reset_every: null
+  random_period: 10_000
+  start_training: 5000
+  test_episodes: 100
+log:
+  dump_every: 50
+  dir: logs/test/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  wandb: false
+  tensorboard: true
+  info: true
+  thread: true
+  name: null
+  proj_name: "JAC"
+  proj_entity: "gnncan-t"
+  run: null
+  stdout: true
+seed: null

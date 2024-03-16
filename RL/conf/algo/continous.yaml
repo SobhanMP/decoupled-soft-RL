@@ -1,0 +1,17 @@
+hidden_layers: 2
+hidden_units: 256
+activation: "relu"
+loss_fn: "mse"
+# setup
+temp: 0.2
+max_entropy: null
+min_entropy: null
+Rp: 0.0
+mellow: False
+decoupled: False
+discount: 0.99
+# sampling
+quad: False
+diag: True
+sampling_head: 1
+trian: False

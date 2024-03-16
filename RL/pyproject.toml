@@ -1,0 +1,43 @@
+[project]
+name = "jac"
+authors = [
+    { name = "A", email = "B@C.D" },
+]
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "requests",
+    "jax>=0.4.14",
+    "optax",
+    "chex",
+    "dm-haiku",
+    
+    "etils[edc]",
+    
+    "wandb",
+    "tensorflow>=2.13", #for logging
+    "tensorboardX",
+    "crc32c",
+    "soundfile",
+
+    "tqdm",
+    
+    
+    "gymnasium[mujoco]",
+    "gymnasium-robotics",
+    "dm_control",
+    "envpool",
+    "hydra-core",
+    "omegaconf",
+    
+    "matplotlib",
+    "seaborn"
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov", "pytest-xdist"]
+cuda12 = ["jax[cuda12_pip]"] # -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+cuda11 = ["jax[cuda11_pip]"] # -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+
+[tool.setuptools.packages.find]
+where = ["."]

@@ -1,0 +1,3 @@
+id: "HalfCheetah-v4"
+num_envs: 1
+num_envs_test: ${train.test_episodes}
